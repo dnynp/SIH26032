@@ -1,0 +1,3 @@
+import Layout from "../../components/Layout";
+const farmers=[["Yash","8888888888","Example Village","Pune","Maharashtra"],["Rahul Patil","9000000001","Khed","Pune","Maharashtra"],["Suresh Jadhav","9000000002","Niphad","Nashik","Maharashtra"]];
+export default function Farmers(){return <Layout><div className="page-head"><div><p className="eyebrow">FARMER RECORDS</p><h1>Farmers</h1></div></div><div className="card table-card"><table><thead><tr><th>Name</th><th>Mobile</th><th>Village</th><th>District</th><th>State</th></tr></thead><tbody>{farmers.map((f,i)=><tr key={i}>{f.map((x,j)=><td key={j}>{j===0?<b>{x}</b>:x}</td>)}</tr>)}</tbody></table></div></Layout>}

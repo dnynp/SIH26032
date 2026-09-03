@@ -1,0 +1,4 @@
+import Layout from "../../components/Layout";
+import StatusBadge from "../../components/StatusBadge";
+const payments=[["Yash","Rice","300 kg","₹25/kg","₹7,500","Completed"],["Rahul","Wheat","500 kg","₹25/kg","₹12,500","Pending"]];
+export default function Payments(){return <Layout><div className="page-head"><div><p className="eyebrow">PAYMENT OPERATIONS</p><h1>Payments</h1><p className="muted">Create and complete farmer payments after procurement.</p></div></div><div className="card table-card"><table><thead><tr><th>Farmer</th><th>Crop</th><th>Quantity</th><th>Rate</th><th>Total</th><th>Status</th><th>Action</th></tr></thead><tbody>{payments.map((p,i)=><tr key={i}><td><b>{p[0]}</b></td><td>{p[1]}</td><td>{p[2]}</td><td>{p[3]}</td><td><b>{p[4]}</b></td><td><StatusBadge status={p[5]}/></td><td>{p[5]==="Pending"?<button className="btn small primary">Complete Payment</button>:<span className="muted">Done</span>}</td></tr>)}</tbody></table></div></Layout>}

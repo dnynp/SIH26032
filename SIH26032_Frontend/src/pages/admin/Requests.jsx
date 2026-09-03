@@ -1,0 +1,4 @@
+import Layout from "../../components/Layout";
+import StatusBadge from "../../components/StatusBadge";
+const rows=[["#15","Yash","Rice","300 kg","Pune","Scheduled"],["#16","Yash","Wheat","500 kg","Pune","Procured"],["#17","Yash","Cotton","700 kg","Nashik","Pending"],["#18","Rahul","Soybean","200 kg","Pune","Procured"]];
+export default function Requests(){return <Layout><div className="page-head"><div><p className="eyebrow">SYSTEM DATA</p><h1>All Requests</h1></div><select className="filter"><option>All Statuses</option><option>Pending</option><option>Procured</option></select></div><div className="card table-card"><table><thead><tr><th>Token</th><th>Farmer</th><th>Crop</th><th>Quantity</th><th>Center</th><th>Status</th></tr></thead><tbody>{rows.map((r,i)=><tr key={i}><td><b>{r[0]}</b></td><td>{r[1]}</td><td>{r[2]}</td><td>{r[3]}</td><td>{r[4]}</td><td><StatusBadge status={r[5]}/></td></tr>)}</tbody></table></div></Layout>}
